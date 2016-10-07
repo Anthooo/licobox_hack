@@ -14,8 +14,8 @@ LicoboxBundle\Entity\Corne:
             length: 255
 
     oneToMany:
-            licorne:
-                targetEntity: LicoboxBundle\Entity\Licorne
-                mappedBy: eyes
+        licornes:
+            targetEntity: LicoboxBundle\Entity\Licorne
+            mappedBy: corne
 
     lifecycleCallbacks: {  }

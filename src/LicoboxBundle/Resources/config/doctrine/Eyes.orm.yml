@@ -13,10 +13,10 @@ LicoboxBundle\Entity\Eyes:
             type: string
             length: '25'
 
+
     oneToMany:
-        licorne:
+        licornes:
             targetEntity: LicoboxBundle\Entity\Licorne
             mappedBy: eyes
+
     lifecycleCallbacks: {  }
-
-

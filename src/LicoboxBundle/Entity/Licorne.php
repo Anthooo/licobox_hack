@@ -11,6 +11,7 @@ class Licorne
 {
 
 
+
     /**
      * @var integer
      */
@@ -22,14 +23,14 @@ class Licorne
     private $name;
 
     /**
-     * @var \LicoboxBundle\Entity\Habitat
-     */
-    private $habitat;
-
-    /**
      * @var \LicoboxBundle\Entity\Eyes
      */
     private $eyes;
+
+    /**
+     * @var \LicoboxBundle\Entity\Corne
+     */
+    private $corne;
 
     /**
      * @var \LicoboxBundle\Entity\Pelage
@@ -37,9 +38,9 @@ class Licorne
     private $pelage;
 
     /**
-     * @var \LicoboxBundle\Entity\Corne
+     * @var \LicoboxBundle\Entity\Habitat
      */
-    private $corne;
+    private $habitat;
 
 
     /**
@@ -76,29 +77,6 @@ class Licorne
     }
 
     /**
-     * Set habitat
-     *
-     * @param \LicoboxBundle\Entity\Habitat $habitat
-     * @return Licorne
-     */
-    public function setHabitat(\LicoboxBundle\Entity\Habitat $habitat = null)
-    {
-        $this->habitat = $habitat;
-
-        return $this;
-    }
-
-    /**
-     * Get habitat
-     *
-     * @return \LicoboxBundle\Entity\Habitat 
-     */
-    public function getHabitat()
-    {
-        return $this->habitat;
-    }
-
-    /**
      * Set eyes
      *
      * @param \LicoboxBundle\Entity\Eyes $eyes
@@ -119,6 +97,29 @@ class Licorne
     public function getEyes()
     {
         return $this->eyes;
+    }
+
+    /**
+     * Set corne
+     *
+     * @param \LicoboxBundle\Entity\Corne $corne
+     * @return Licorne
+     */
+    public function setCorne(\LicoboxBundle\Entity\Corne $corne = null)
+    {
+        $this->corne = $corne;
+
+        return $this;
+    }
+
+    /**
+     * Get corne
+     *
+     * @return \LicoboxBundle\Entity\Corne 
+     */
+    public function getCorne()
+    {
+        return $this->corne;
     }
 
     /**
@@ -145,25 +146,25 @@ class Licorne
     }
 
     /**
-     * Set corne
+     * Set habitat
      *
-     * @param \LicoboxBundle\Entity\Corne $corne
+     * @param \LicoboxBundle\Entity\Habitat $habitat
      * @return Licorne
      */
-    public function setCorne(\LicoboxBundle\Entity\Corne $corne = null)
+    public function setHabitat(\LicoboxBundle\Entity\Habitat $habitat = null)
     {
-        $this->corne = $corne;
+        $this->habitat = $habitat;
 
         return $this;
     }
 
     /**
-     * Get corne
+     * Get habitat
      *
-     * @return \LicoboxBundle\Entity\Corne 
+     * @return \LicoboxBundle\Entity\Habitat 
      */
-    public function getCorne()
+    public function getHabitat()
     {
-        return $this->corne;
+        return $this->habitat;
     }
 }
