@@ -3,6 +3,7 @@
 namespace LicoboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Habitat
@@ -14,6 +15,8 @@ class Habitat
         return $this->type;
     }
 
+
+
     function __construct()
     {
         $this->Licorne = new ArrayCollection();
@@ -23,7 +26,7 @@ class Habitat
     // CODE GENERE //
 
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -31,6 +34,11 @@ class Habitat
      * @var string
      */
     private $type;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $licornes;
 
 
     /**
@@ -64,5 +72,38 @@ class Habitat
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Add licornes
+     *
+     * @param \LicoboxBundle\Entity\Licorne $licornes
+     * @return Habitat
+     */
+    public function addLicorne(\LicoboxBundle\Entity\Licorne $licornes)
+    {
+        $this->licornes[] = $licornes;
+
+        return $this;
+    }
+
+    /**
+     * Remove licornes
+     *
+     * @param \LicoboxBundle\Entity\Licorne $licornes
+     */
+    public function removeLicorne(\LicoboxBundle\Entity\Licorne $licornes)
+    {
+        $this->licornes->removeElement($licornes);
+    }
+
+    /**
+     * Get licornes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLicornes()
+    {
+        return $this->licornes;
     }
 }

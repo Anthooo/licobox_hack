@@ -14,8 +14,8 @@ LicoboxBundle\Entity\Pelage:
             length: 255
 
     oneToMany:
-            licorne:
-                targetEntity: LicoboxBundle\Entity\Licorne
-                mappedBy: eyes
+        licornes:
+            targetEntity: LicoboxBundle\Entity\Licorne
+            mappedBy: pelage
 
     lifecycleCallbacks: {  }

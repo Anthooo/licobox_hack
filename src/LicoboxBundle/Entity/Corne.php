@@ -3,6 +3,7 @@
 namespace LicoboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Corne
@@ -14,16 +15,11 @@ class Corne
         return $this->type;
     }
 
-    function __construct()
-    {
-        $this->Licorne = new ArrayCollection();
-    }
+    // GENERATE CODE
 
-
-    // CODE GENERE //
 
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -32,6 +28,18 @@ class Corne
      */
     private $type;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $licornes;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->licornes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,42 +73,37 @@ class Corne
     {
         return $this->type;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $licorne;
-
 
     /**
-     * Add licorne
+     * Add licornes
      *
-     * @param \LicoboxBundle\Entity\Licorne $licorne
+     * @param \LicoboxBundle\Entity\Licorne $licornes
      * @return Corne
      */
-    public function addLicorne(\LicoboxBundle\Entity\Licorne $licorne)
+    public function addLicorne(\LicoboxBundle\Entity\Licorne $licornes)
     {
-        $this->licorne[] = $licorne;
+        $this->licornes[] = $licornes;
 
         return $this;
     }
 
     /**
-     * Remove licorne
+     * Remove licornes
      *
-     * @param \LicoboxBundle\Entity\Licorne $licorne
+     * @param \LicoboxBundle\Entity\Licorne $licornes
      */
-    public function removeLicorne(\LicoboxBundle\Entity\Licorne $licorne)
+    public function removeLicorne(\LicoboxBundle\Entity\Licorne $licornes)
     {
-        $this->licorne->removeElement($licorne);
+        $this->licornes->removeElement($licornes);
     }
 
     /**
-     * Get licorne
+     * Get licornes
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getLicorne()
+    public function getLicornes()
     {
-        return $this->licorne;
+        return $this->licornes;
     }
 }
