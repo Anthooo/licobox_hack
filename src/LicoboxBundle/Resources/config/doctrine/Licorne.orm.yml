@@ -1,0 +1,40 @@
+LicoboxBundle\Entity\Licorne:
+    type: entity
+    table: null
+    repositoryClass: LicoboxBundle\Repository\LicorneRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        eyes:
+            targetEntity: Eyes
+            joinColumn:
+                name: id_eyes
+                referencedColumnName: id
+
+        pelage:
+            targetEntity: Pelage
+            joinColumn:
+                name: id_pelage
+                referencedColumnName: id
+
+        corne:
+            targetEntity: Corne
+            joinColumn:
+                name: id_corne
+                referencedColumnName: id
+    oneToOne:
+        habitat:
+            targetEntity: Habitat
+            jointColumn:
+                name: id_habitat
+                referencedColumnName: id

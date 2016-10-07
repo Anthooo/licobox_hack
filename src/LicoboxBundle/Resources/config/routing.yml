@@ -1,0 +1,36 @@
+licobox_user:
+    resource: "@LicoboxBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+licobox_homepage:
+    path:     /
+    defaults: { _controller: LicoboxBundle:Default:index }
+
+check_user:
+    path:     /plip
+    defaults: { _controller: "LicoboxBundle:Default:checkUser" }
+    methods:  [GET, POST]
+
+licobox_licorne:
+        resource: "@LicoboxBundle/Resources/config/routing/licorne.yml"
+        prefix:   /licorne
+
+licobox_habitat:
+        resource: "@LicoboxBundle/Resources/config/routing/habitat.yml"
+        prefix:   /habitat
+
+licobox_pelage:
+        resource: "@LicoboxBundle/Resources/config/routing/pelage.yml"
+        prefix:   /pelage
+
+licobox_eyes:
+        resource: "@LicoboxBundle/Resources/config/routing/eyes.yml"
+        prefix:   /eyes
+
+licobox_corne:
+        resource: "@LicoboxBundle/Resources/config/routing/corne.yml"
+        prefix:   /corne
+
+licobox_capture:
+        resource: "@LicoboxBundle/Resources/config/routing/capture.yml"
+        prefix:   /capture

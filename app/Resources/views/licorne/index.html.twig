@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Licorne list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for licorne in licornes %}
+            <tr>
+                <td><a href="{{ path('licorne_show', { 'id': licorne.id }) }}">{{ licorne.id }}</a></td>
+                <td>{{ licorne.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('licorne_show', { 'id': licorne.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('licorne_edit', { 'id': licorne.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('licorne_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

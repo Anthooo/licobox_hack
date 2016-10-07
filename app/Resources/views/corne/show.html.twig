@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Corne</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ corne.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ corne.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('corne_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

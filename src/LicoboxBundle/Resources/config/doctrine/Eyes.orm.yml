@@ -1,0 +1,22 @@
+LicoboxBundle\Entity\Eyes:
+    type: entity
+    table: null
+    repositoryClass: LicoboxBundle\Repository\EyesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        color:
+            type: string
+            length: '25'
+
+    oneToMany:
+        licorne:
+            targetEntity: LicoboxBundle\Entity\Licorne
+            mappedBy: eyes
+    lifecycleCallbacks: {  }
+
+

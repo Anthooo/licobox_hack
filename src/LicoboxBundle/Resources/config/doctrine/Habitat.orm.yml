@@ -1,0 +1,21 @@
+LicoboxBundle\Entity\Habitat:
+    type: entity
+    table: null
+    repositoryClass: LicoboxBundle\Repository\HabitatRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+
+    oneToMany:
+            licorne:
+                targetEntity: LicoboxBundle\Entity\Licorne
+                mappedBy: eyes
+
+    lifecycleCallbacks: {  }

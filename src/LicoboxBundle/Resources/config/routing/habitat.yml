@@ -1,0 +1,12 @@
+habitat_index:
+    path:     /
+    defaults: { _controller: "LicoboxBundle:Habitat:index" }
+    methods:  GET
+
+habitat_show:
+    path:     /{id}/show
+    defaults: { _controller: "LicoboxBundle:Habitat:show" }
+    methods:  GET
+
+
+

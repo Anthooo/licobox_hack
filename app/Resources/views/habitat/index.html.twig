@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Habitat list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for habitat in habitats %}
+            <tr>
+                <td><a href="{{ path('habitat_show', { 'id': habitat.id }) }}">{{ habitat.id }}</a></td>
+                <td>{{ habitat.type }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('habitat_show', { 'id': habitat.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
