@@ -2,14 +2,47 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('style.css') }}" />
+        {% endblock %}
+
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+           <!--  <a href="https://s22.postimg.org/ulblilwm9/2_Vy9v_S5_Imgur.jpg">
+                <img border="0" alt="logo">
+            </a> -->
+          <!-- <img src="a href="https://s22.postimg.org/ulblilwm9/2_Vy9v_S5_Imgur.jpg" alt="logo"></a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down"> -->
+            <li><a href="sass.html">Mes licornes</a></li>
+            <li><a href="badges.html">Capturer des licornes</a></li>
+            <li><a href="collapsible.html">Mon compte</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+        
+
     <body>
     {{ dump(app.session.get('name')) }}
     {{ dump(app.session.get('id_user')) }}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+        <footer>
+   
+        </footer>
+
     </body>
+
 </html>
