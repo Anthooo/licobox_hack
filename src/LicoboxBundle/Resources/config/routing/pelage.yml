@@ -1,0 +1,12 @@
+pelage_index:
+    path:     /
+    defaults: { _controller: "LicoboxBundle:Pelage:index" }
+    methods:  GET
+
+pelage_show:
+    path:     /{id}/show
+    defaults: { _controller: "LicoboxBundle:Pelage:show" }
+    methods:  GET
+
+
+

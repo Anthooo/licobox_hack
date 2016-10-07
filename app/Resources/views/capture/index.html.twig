@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Capture list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datecapture</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for capture in captures %}
+            <tr>
+                <td><a href="{{ path('capture_show', { 'id': capture.id }) }}">{{ capture.id }}</a></td>
+                <td>{% if capture.dateCapture %}{{ capture.dateCapture|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('capture_show', { 'id': capture.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('capture_edit', { 'id': capture.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('capture_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

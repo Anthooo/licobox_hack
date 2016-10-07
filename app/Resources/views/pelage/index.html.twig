@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pelage list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pelage in pelages %}
+            <tr>
+                <td><a href="{{ path('pelage_show', { 'id': pelage.id }) }}">{{ pelage.id }}</a></td>
+                <td>{{ pelage.type }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('pelage_show', { 'id': pelage.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

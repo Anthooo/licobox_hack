@@ -1,0 +1,12 @@
+eyes_index:
+    path:     /
+    defaults: { _controller: "LicoboxBundle:Eyes:index" }
+    methods:  GET
+
+eyes_show:
+    path:     /{id}/show
+    defaults: { _controller: "LicoboxBundle:Eyes:show" }
+    methods:  GET
+
+
+

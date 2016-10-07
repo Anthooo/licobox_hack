@@ -1,0 +1,28 @@
+LicoboxBundle\Entity\Capture:
+    type: entity
+    table: null
+    repositoryClass: LicoboxBundle\Repository\CaptureRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dateCapture:
+            type: date
+            column: date_capture
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        Id_Licorne:
+            targetEntity: Licorne
+            joinColumn:
+                name: id_licorne
+                referencedColumnName: id
+
+        Id_User:
+            targetEntity: User
+            joinColumn:
+                name: id_user
+                referencedColumnName: id

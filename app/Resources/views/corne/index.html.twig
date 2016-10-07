@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Corne list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for corne in cornes %}
+            <tr>
+                <td><a href="{{ path('corne_show', { 'id': corne.id }) }}">{{ corne.id }}</a></td>
+                <td>{{ corne.type }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('corne_show', { 'id': corne.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

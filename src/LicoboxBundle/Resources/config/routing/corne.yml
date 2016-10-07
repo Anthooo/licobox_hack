@@ -1,0 +1,12 @@
+corne_index:
+    path:     /
+    defaults: { _controller: "LicoboxBundle:Corne:index" }
+    methods:  GET
+
+corne_show:
+    path:     /{id}/show
+    defaults: { _controller: "LicoboxBundle:Corne:show" }
+    methods:  GET
+
+
+

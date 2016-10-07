@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pelage</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pelage.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ pelage.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pelage_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

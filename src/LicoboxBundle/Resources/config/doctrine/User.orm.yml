@@ -1,0 +1,30 @@
+LicoboxBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: LicoboxBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        pass:
+            type: string
+            length: '32'
+            nullable: false
+        mail:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        capture:
+            targetEntity: Capture
+            joinColumn:
+                name: id_capture
+                referencedColumnName: id
